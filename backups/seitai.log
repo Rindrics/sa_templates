@@ -1,0 +1,20 @@
+This is pTeX, Version 3.1415926-p3.4 (sjis) (TeX Live 2013/W32TeX) (format=ptex 2017.4.11)  12 APR 2017 15:58
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**seitai
+(./seitai.tex
+! Undefined control sequence.
+l.1 \subsection
+               {¶‘Ô}                 %“Ç‚İ‚İê—pB
+? 
+! I can't find file `{output/bunpu_kaiyu}'.
+l.2 \input{output/bunpu_kaiyu}
+                              
+(Press Enter to retry, or Control-Z to exit)
+Please type another input file name: 
+! Emergency stop.
+l.2 \input{output/bunpu_kaiyu}
+                              
+End of file on the terminal!
+
+No pages of output.
