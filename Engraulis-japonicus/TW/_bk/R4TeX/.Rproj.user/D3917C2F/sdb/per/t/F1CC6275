@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "THISYEAR            <- 2016\nREVIEW_RANGE_yr     <- 5\nSTOCK_ABB           <- \"TW\"\nSTOCK_ABB_JP        <- \"対馬暖流系群\"\nSPCS_NAME           <- \"Engraulis-japonicus\"\nSPCS_NAME_JP        <- \"カタクチイワシ\"",
+    "created" : 1493014197888.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "772286947",
+    "id" : "F1CC6275",
+    "lastKnownWriteTime" : 1493022866,
+    "last_content_update" : 1493022866106,
+    "path" : "~/Dropbox/Projects/資源評価/資源評価TeX版/Engraulis-japonicus/TW/R4TeX/定数.R",
+    "project_path" : "定数.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

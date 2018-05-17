@@ -1,0 +1,116 @@
+ cat %資源評価TeX化に関する提案書.txt | sed \
+ -e 's/–/{\\texttwelveudash}/g'\
+ -e 's/℃/{\\textcelsius}/g'\
+ -e 's/×/\\CID{00695}/g'\
+ -e 's/％/\\%/g'\
+ -e 's/µ/$\\mu$/g'\
+ -e 's/魹/\\CID{15329}/g'\
+ -e 's/-1乗/${}^\\text{-1}$/g'\
+ -e 's/-2乗/${}^\\text{-2}$/g'\
+ -e 's/2乗/${}^\\text{2}$/g'\
+ -e 's/(top)/(\\textit{top})/g'\
+ -e 's/(middle)/(\\textit{middle})/g'\
+ -e 's/(bottom)/(\\textit{bottom})/g'\
+ -e 's/(left)/(\\textit{left})/g'\
+ -e 's/(right)/(\\textit{right})/g'\
+ -e 's/(open bar)/(\\textit{open bar})/g'\
+ -e 's/(solid bar)/(\\textit{solid bar})/g'\
+ -e 's/(open column)/(\\textit{open bar})/g'\
+ -e 's/(colid column)/(\\textit{open bar})/g'\
+ -e 's/(open circle)/(\\textit{open ciecle})/g'\
+ -e 's/(closed circle)/(\\textit{closed circle})/g'\
+ -e 's/(thick line)/(\\textit{thick line})/g'\
+ -e 's/(thin vertical line)/(\\textit{thin vertical line})/g'\
+ -e 's/(vertical line)/(\\textit{vertical line})/g'\
+ -e 's/(thin gray line)/(\\textit{thin gray line})/g'\
+ -e 's/(thin line)/(\\textit{thin gray line})/g'\
+ -e 's/Anchoa /\\textit{\\mbox{Anchoa }}/g'\
+ -e 's/encrasicolus/\\textit{\\mbox{encrasicolus}}/g'\
+ -e 's/Engraulis /\\textit{\\mbox{Engraulis }}/g'\
+ -e 's/Cololabis saira/\\textit{\\mbox{Cololabis saira}}/g'\
+ -e 's/melanostictus/\\textit{\\mbox{melanostictus}}/g'\
+ -e 's/mitchilli/\\textit{\\mbox{mitchilli}}/g'\
+ -e 's/mordax/\\textit{\\mbox{mordax}}/g'\
+ -e 's/sagax/\\textit{\\mbox{sagax}}/g'\
+  -e 's/Clupea pallasii/\\textit{Clupea pallasii}/g'\
+ -e 's/Sardinops /\\textit{\\mbox{Sardinops }}/g'\
+ -e 's/E. japonicus/\\textit{\\mbox{E. japonicus}}/g'\
+ -e 's/japonicus/\\textit{\\mbox{japonicus}}/g' > honbun.tex
+ cat Main.txt | sed \
+ -e 's/–/{\\texttwelveudash}/g'\
+ -e 's/℃/{\\textcelsius}/g'\
+ -e 's/×/\\CID{00695}/g'\
+ -e 's/％/\\%/g'\
+ -e 's/µ/$\\mu$/g'\
+ -e 's/魹/\\CID{15329}/g'\
+ -e 's/-1乗/${}^\\text{-1}$/g'\
+ -e 's/-2乗/${}^\\text{-2}$/g'\
+ -e 's/2乗/${}^\\text{2}$/g'\
+ -e 's/(top)/(\\textit{top})/g'\
+ -e 's/(middle)/(\\textit{middle})/g'\
+ -e 's/(bottom)/(\\textit{bottom})/g'\
+ -e 's/(left)/(\\textit{left})/g'\
+ -e 's/(right)/(\\textit{right})/g'\
+ -e 's/(open bar)/(\\textit{open bar})/g'\
+ -e 's/(solid bar)/(\\textit{solid bar})/g'\
+ -e 's/(open column)/(\\textit{open bar})/g'\
+ -e 's/(colid column)/(\\textit{open bar})/g'\
+ -e 's/(open circle)/(\\textit{open ciecle})/g'\
+ -e 's/(closed circle)/(\\textit{closed circle})/g'\
+ -e 's/(thick line)/(\\textit{thick line})/g'\
+ -e 's/(thin vertical line)/(\\textit{thin vertical line})/g'\
+ -e 's/(vertical line)/(\\textit{vertical line})/g'\
+ -e 's/(thin gray line)/(\\textit{thin gray line})/g'\
+ -e 's/(thin line)/(\\textit{thin gray line})/g'\
+ -e 's/Anchoa /\\textit{\\mbox{Anchoa }}/g'\
+ -e 's/encrasicolus/\\textit{\\mbox{encrasicolus}}/g'\
+ -e 's/Engraulis /\\textit{\\mbox{Engraulis }}/g'\
+ -e 's/Cololabis saira/\\textit{\\mbox{Cololabis saira}}/g'\
+ -e 's/melanostictus/\\textit{\\mbox{melanostictus}}/g'\
+ -e 's/mitchilli/\\textit{\\mbox{mitchilli}}/g'\
+ -e 's/mordax/\\textit{\\mbox{mordax}}/g'\
+ -e 's/sagax/\\textit{\\mbox{sagax}}/g'\
+  -e 's/Clupea pallasii/\\textit{Clupea pallasii}/g'\
+ -e 's/Sardinops /\\textit{\\mbox{Sardinops }}/g'\
+ -e 's/E. japonicus/\\textit{\\mbox{E. japonicus}}/g'\
+ -e 's/japonicus/\\textit{\\mbox{japonicus}}/g' > Main.tex
+
+
+ cat %カタクチ対馬.txt | sed \
+ -e 's/–/{\\texttwelveudash}/g'\
+ -e 's/℃/{\\textcelsius}/g'\
+ -e 's/×/\\CID{00695}/g'\
+ -e 's/％/\\%/g'\
+ -e 's/µ/$\\mu$/g'\
+ -e 's/魹/\\CID{15329}/g'\
+ -e 's/-1乗/${}^\\text{-1}$/g'\
+ -e 's/-2乗/${}^\\text{-2}$/g'\
+ -e 's/2乗/${}^\\text{2}$/g'\
+ -e 's/(top)/(\\textit{top})/g'\
+ -e 's/(middle)/(\\textit{middle})/g'\
+ -e 's/(bottom)/(\\textit{bottom})/g'\
+ -e 's/(left)/(\\textit{left})/g'\
+ -e 's/(right)/(\\textit{right})/g'\
+ -e 's/(open bar)/(\\textit{open bar})/g'\
+ -e 's/(solid bar)/(\\textit{solid bar})/g'\
+ -e 's/(open column)/(\\textit{open bar})/g'\
+ -e 's/(colid column)/(\\textit{open bar})/g'\
+ -e 's/(open circle)/(\\textit{open ciecle})/g'\
+ -e 's/(closed circle)/(\\textit{closed circle})/g'\
+ -e 's/(thick line)/(\\textit{thick line})/g'\
+ -e 's/(thin vertical line)/(\\textit{thin vertical line})/g'\
+ -e 's/(vertical line)/(\\textit{vertical line})/g'\
+ -e 's/(thin gray line)/(\\textit{thin gray line})/g'\
+ -e 's/(thin line)/(\\textit{thin gray line})/g'\
+ -e 's/Anchoa /\\textit{\\mbox{Anchoa }}/g'\
+ -e 's/encrasicolus/\\textit{\\mbox{encrasicolus}}/g'\
+ -e 's/Engraulis /\\textit{\\mbox{Engraulis }}/g'\
+ -e 's/Cololabis saira/\\textit{\\mbox{Cololabis saira}}/g'\
+ -e 's/melanostictus/\\textit{\\mbox{melanostictus}}/g'\
+ -e 's/mitchilli/\\textit{\\mbox{mitchilli}}/g'\
+ -e 's/mordax/\\textit{\\mbox{mordax}}/g'\
+ -e 's/sagax/\\textit{\\mbox{sagax}}/g'\
+  -e 's/Clupea pallasii/\\textit{Clupea pallasii}/g'\
+ -e 's/Sardinops /\\textit{\\mbox{Sardinops }}/g'\
+ -e 's/E. japonicus/\\textit{\\mbox{E. japonicus}}/g'\
+ -e 's/japonicus/\\textit{\\mbox{japonicus}}/g' > TW_Anchovy.tex
