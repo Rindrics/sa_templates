@@ -1,13 +1,16 @@
 #+STARTUP: indent content
-#+TAGS: @work(w) @home(h) @out(o)
-#+TAGS: @tel @mac @discuss @read
-#+TAGS: sar(r) jmack(j) stac(s) TeX(t) AORI(a)
-#+TAGS: offline(f) online(l)
-#+TAGS: @iwaki(k) @tokyo(y) @nagasaki(n)
-#+TAGS: worktrip meeting cruise
-#+COLUMNS: %25ITEM %TODO %TAGS %ESTIMATE
-* stacTeX                                                           :stacTeX:
-** Make users manual (but self-documenting style manuscript is more important
+* stockAssessTeX                                                    :stacTeX:
+** TODO 環境設定 [50%]
+*** TODO Docker環境の整備
+*** DONE Redpen
+*** TODO 引用文献
+*** TODO 目次
+*** DONE 柱
+*** DONE ページ番号
+*** 提出方法を考える
+*** TODO Windowsバッチファイル
+*** DONE Macシェルスクリプト
+** マニュアル作成
 ** サンプル作成
 *** ASSIGNED TAC種（マアジ）
 *** 非TAC種（カタクチイワシ）
