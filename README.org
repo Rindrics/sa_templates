@@ -1,9 +1,5 @@
-# stockAssessTeX
-
-いろいろテスト用。
-
-- GitHub
-- docker
-- executing file
- - commit
- - compile
+#+STARTUP: content indent
+* stockAssessTeX
+** TODO Set envs [50%]
+*** TODO Docker
+*** DONE Redpen
