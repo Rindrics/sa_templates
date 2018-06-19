@@ -1,0 +1,275 @@
+
+\documentclass[A4j, disablejfam, titlepage, openright, twoside, 10.5pt]{myjsbook}
+\linespread{1.5}
+\usepackage[dvipdfmx, hiresbb]{graphicx, xcolor}
+\usepackage{draftwatermark}
+\usepackage{otf}
+\usepackage{array, booktabs}
+\usepackage{blindtext}
+\usepackage{colortbl}
+\usepackage{atbegshi}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{fancyhdr}
+\usepackage{subfiles}
+\usepackage{TW_Engraulis-japonicus.sty}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\chaptermark}[1]{\markright{}}
+\renewcommand{\sectionmark}[1]{\markright{}}
+\chead{\thechapter--\thepage--}
+\cfoot{\normalfont\hfil-- \thepage\ --\hfil}
+\ifnum 42146=\euc"A4A2
+  \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
+\else
+  \AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
+\fi
+%\usepackage{footnpag}
+%\makeatletter
+%\let\original@@makefntext\@makefntext
+%\let\original@footnoterule\footnoterule
+%\makeatother
+%\usepackage{ftnright}
+%\makeatletter
+%\let\@makefntext\original@@makefntext
+%\let\footnoterule\original@footnoterule
+%\makeatother
+
+\makeatletter
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother
+
+\usepackage[dvipdfmx,
+bookmarks=true,%
+bookmarksnumbered=true,%
+bookmarksopen=true,%
+]{hyperref}
+%\setlength{\textwidth}{\fullwidth}
+\setlength{\textwidth}{15truecm}
+\setlength{\hoffset}{0pt}
+\setlength{\voffset}{-1.54truecm}
+\setlength{\headsep}{2truecm}
+\setlength{\footskip}{2truecm}
+\setlength{\textheight}{23truecm}
+%\setlength{\textwidth}{35zw}
+%\setlength{\textheight}{50zw}
+%\setlength{\headwidth}{1truemm}
+%\addtolength{\textheight}{\topskip}
+%\setlength{\topmargin}{0pt}
+%\setlength{\voffset}{-15truemm}
+%\setlength{\hoffset}{-5truemm}
+\setlength{\marginparsep}{1truecm}
+\setlength{\marginparwidth}{0pt}
+\setlength{\oddsidemargin}{0.46truecm}
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\abovecaptionskip}{-3truemm}
+\setlength{\belowcaptionskip}{-2truemm}
+\SetWatermarkLightness{0.9}
+\setcounter{tocdepth}{1} %1だとchapterまで目次に表示される
+%\usepackage{ctable, dcolumn}
+\usepackage[format=hang, labelsep=period]{caption}
+\usepackage[sectionbib]{chapterbib}
+\usepackage{float}
+\usepackage[T1]{fontenc}
+%\usepackage[scaled]{helvet}
+\usepackage{layout}
+\usepackage{pdflscape}
+%\usepackage{myCitation}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{newtxtext, newtxmath}
+\usepackage{otf}
+\usepackage{pifont}
+%\usepackage{subcaption}
+\usepackage{subfig}
+\usepackage{tabularx}
+\usepackage{textcomp}
+\usepackage{threeparttable}
+\usepackage{subfiles} % 独立タイプセットを可能にするが、chapterbibと併用できないので使用を停止。併用のためには正規表現などで工夫する必要がある。
+\usepackage{tocbibind}
+\usepackage[authoryear, round, sort&compress]{mynatbib} %natbibを使うと引用文献が続きになってしまう。
+%\bibliographystyle{mynatbib}
+%\usepackage{jecon}
+\bibliographystyle{jecon}     %jeconの利用を検討中。\citealtなどの引用文を変更する必要あり
+%\setcitestyle{number,close={)}}
+
+%ここから 引用文献レベルをsubsectionに再定義
+\makeatletter
+\renewenvironment{thebibliography}[1]{%
+  %\global\let\presectionname\relax
+  %\global\let\postsectionname\relax
+  \subsection{\bibname}\@mkboth{\bibname}{}%
+  %\addcontentsline{toc}{subsection}{\bibname}%   これをオンにすると目次に2回出てきてしまう
+  \list{\@biblabel{\@arabic\c@enumiv}}%
+        {\settowidth\labelwidth{\@biblabel{#1}}%
+        \setlength{\itemindent}{-2zw}%      文献リストのインデント
+        \setlength{\topsep}{-10zw}%         引用文献」から最初の文献までの空白
+        %\leftmargin\labelwidth
+        %\advance\leftmargin\labelsep
+        %\@openbib@code
+        %\usecounter{enumiv}%
+        %\let\p@enumiv\@empty
+        %\renewcommand\theenumiv{\@arabic\c@enumiv}
+        }%
+  %\sloppy
+  %\clubpenalty4000
+  %\@clubpenalty\clubpenalty
+  %\widowpenalty4000%
+  \sfcode`\.\@m}
+  {\def\@noitemerr
+    {\@latex@warning{Empty `thebibliography' environment}}%
+  \endlist}
+\makeatother
+%ここまで 引用文献レベルをsubsectionに再定義
+
+
+%ハイフネーション設定
+\hyphenation{Engraulis}
+\hyphenation{japonicus}
+
+\renewcommand{\sfdefault}{phv}
+\renewcommand{\rmdefault}{qtm}
+\renewcommand{\baselinestretch}{1}
+\renewcommand{\thefootnote}{*\roman{footnote}}
+\renewcommand{~}{\phantom{0}}
+\makeatletter
+   \renewcommand{\thefigure}{\arabic{figure}}%      図番号の体裁
+  \@addtoreset{figure}{section}
+ \makeatother
+
+ \makeatletter
+ \renewcommand{\thetable}{arabic{table}}%       表番号の体裁
+  \@addtoreset{table}{section}
+\makeatother
+%コマンド
+\setcounter{secnumdepth}{3}
+\newcommand{\fcur}{$F_{current}$}
+\newcommand{\fmed}{Fmed}
+\newcommand{\要約}{\begin{center}\Large{{\gt 要　　　約}}\end{center}}
+\newcommand{\digest}{}
+%\newcommand{\}{}
+
+%環境
+\newenvironment{OneOfSixFigs}[3]{
+\begin{figure}[htp]
+    \captionsetup{width=65mm}
+ \begin{minipage}{0.5\hsize}
+  \begin{center}
+   \includegraphics[width=70mm]{#1}
+  \end{center}
+  \caption{#2}
+  \label{#3}
+ \end{minipage}
+\end{figure}}
+
+\newenvironment{TwoOfSixFigs}[6]{
+\begin{figure}[htp]
+    \captionsetup{width=65mm}
+ \begin{minipage}{0.5\hsize}
+  \begin{center}
+   \includegraphics[width=70mm]{#1}
+  \end{center}
+  \caption{#2}
+  \label{#3}
+ \end{minipage}
+ \begin{minipage}{0.5\hsize}
+  \begin{center}
+   \includegraphics[width=70mm]{#4}
+  \end{center}
+  \caption{#5}
+  \label{#6}
+ \end{minipage}
+\end{figure}}
+
+\newenvironment{TwoOfEightFigs}[6]{
+\begin{figure}[htp]
+    \captionsetup{width=60mm}
+ \begin{minipage}{0.5\hsize}
+  \begin{center}
+   \includegraphics[width=60mm]{#1}
+  \end{center}
+  \caption{#2}
+  \label{#3}
+ \end{minipage}
+ \begin{minipage}{0.5\hsize}
+  \begin{center}
+   \includegraphics[width=60mm]{#4}
+  \end{center}
+  \caption{#5}
+  \label{#6}
+ \end{minipage}
+\end{figure}}
+
+%担当機関
+\newenvironment{担当機関等}[3]{
+\begin{table}[h]
+\begin{tabular}{{rp{12.2cm}}}
+責任担当水研: &#1 （#2）\\
+参画機関: & #3
+\end{tabular}
+\end{table}
+}
+
+%過去5年間の資源量等
+\newenvironment{過去五年間の資源量等}[5]{
+\begin{center}
+\begin{tabular}{cccccc}
+\toprule
+\multirow{2}{*}{年} & {資源量}  & {親魚量}  & {漁獲量}  & {$F$} & {漁獲割合}\tabularnewline
+          &   (千トン)  & (千トン)    & (千トン)&   & （\%）  \tabularnewline
+\hline
+#1  \tabularnewline
+#2  \tabularnewline
+#3  \tabularnewline
+#4  \tabularnewline
+#5  \tabularnewline
+\bottomrule
+\end{tabular}
+\end{center}
+}
+
+\begin{document}
+\frontmatter
+%\layout
+%
+%
+\title{
+{\thisyrjp}年度
+\\
+{\HUGE 我が国周辺水域の漁業資源評価}}
+\author{\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+{\Large 水産庁増殖推進部}
+\\
+}
+\date{\today}
+%\maketitle
+%
+%
+%
+\mainmatter
+\chapter{平成\ThisYrJp（\ThisYr）年度カタクチイワシ対馬暖流系群の資源評価}
+
+\input{files_to_edit/TW_Engraulis-japonicus_sekinintantou}
+\input{files_to_edit/TW_Engraulis-japonicus_youyaku}
+\subfile{files_to_edit/fish1_maegaki}
+\input{controllingfiles/TW_Engraulis-japonicus_seitai}
+\input{controllingfiles/TW_Engraulis-japonicus_gyogyou_joukyou}
+\input{controllingfiles/TW_Engraulis-japonicus_shigennojoutai}
+\input{controllingfiles/TW_Engraulis-japonicus_abc_santei_thisyear}
+\input{files_to_edit/TW_Engraulis-japonicus_abc_igai}
+
+\bibliographystyle{mynatbib}
+\bibliography{files_to_edit/TW_Engraulis-japonicus_references}
+\clearpage
+\input{files_to_edit/TW_Engraulis-japonicus_figures}
+%\input{_tables}
+
+\end{document}
