@@ -1,3 +1,29 @@
+#+STARTUP: indent content
+#+TAGS: @work(w) @home(h) @out(o)
+#+TAGS: @tel @mac @discuss @read
+#+TAGS: sar(r) jmack(j) stac(s) TeX(t) AORI(a)
+#+TAGS: offline(f) online(l)
+#+TAGS: @iwaki(k) @tokyo(y) @nagasaki(n)
+#+TAGS: worktrip meeting cruise
+#+COLUMNS: %25ITEM %TODO %TAGS %ESTIMATE
+* stacTeX                                                           :stacTeX:
+** Make users manual (but self-documenting style manuscript is more important
+** サンプル作成
+*** ASSIGNED TAC種（マアジ）
+*** TODO 非TAC種（カタクチイワシ） [0%]
+
+**** TODO Plan1::Using include and chapterbib [0%]
+- _Typesetme.tex
+  + \include{fish1}
+  + \include{fish2}
+    + \input{controllingfiles/maegaki}
+    + \input{gyogyou_jyoukyou}
+    + \biblographystyle{}
+    + \bibliography{bib}
+
+
+***** マスターファイル
+#+BEGIN_SRC tex :tangle ~/Documents/GitHub/stockAssessTeX/master_chapterbib.tex
 \documentclass[A4j, disablejfam, titlepage, openright, twoside, 10.5pt]{myjsbook}
 \linespread{1.5}
 \usepackage[dvipdfmx, hiresbb]{graphicx, xcolor}
@@ -279,3 +305,92 @@ bookmarksopen=true,%
 %
 %
 \end{document}
+
+#+END_SRC
+
+***** 魚種ファイル1
+#+BEGIN_SRC tex :tangle ~/Documents/GitHub/stockAssessTeX/PF_Engraulis-japonicus_nonTAC_1_withB.tex
+%編集不要									編集不要
+%	編集不要							編集不要
+%		編集不要					編集不要
+%			編集不要			編集不要
+%				編集不要	編集不要
+%					編集不要
+%					編集不要
+%				編集不要	編集不要
+%			編集不要			編集不要
+%		編集不要					編集不要
+%	編集不要							編集不要
+%編集不要									編集不要
+%
+%
+%
+
+\chapter{平成\ThisYrJp（\ThisYr）年度カタクチイワシ対馬暖流系群の資源評価}
+%
+\input{files_to_edit/TW_Engraulis-japonicus_sekinintantou}
+\input{files_to_edit/TW_Engraulis-japonicus_youyaku}
+\input{files_to_edit/PF_Engraulis-japonicus_maegaki}
+\input{controllingfiles/TW_Engraulis-japonicus_seitai}
+\input{controllingfiles/TW_Engraulis-japonicus_gyogyou_joukyou}
+\input{controllingfiles/TW_Engraulis-japonicus_shigennojoutai}
+\input{controllingfiles/TW_Engraulis-japonicus_abc_santei_thisyear}
+\input{files_to_edit/TW_Engraulis-japonicus_abc_igai}
+
+\bibliographystyle{mynatbib}
+\bibliography{files_to_edit/PF_Engraulis-japonicus_references}
+\clearpage
+\input{files_to_edit/TW_Engraulis-japonicus_figures}
+%\input{_tables}
+%\setcounter{chapter}{0}
+#+END_SRC
+
+***** 魚種ファイル2
+#+BEGIN_SRC tex :tangle ~/Documents/GitHub/stockAssessTeX/TW_Engraulis-japonicus_nonTAC_1_withB.tex
+%編集不要									編集不要
+%	編集不要							編集不要
+%		編集不要					編集不要
+%			編集不要			編集不要
+%				編集不要	編集不要
+%					編集不要
+%					編集不要
+%				編集不要	編集不要
+%			編集不要			編集不要
+%		編集不要					編集不要
+%	編集不要							編集不要
+%編集不要									編集不要
+%
+%
+%
+
+\chapter{平成\ThisYrJp（\ThisYr）年度カタクチイワシ対馬暖流系群の資源評価}
+%
+\input{files_to_edit/TW_Engraulis-japonicus_sekinintantou}
+\input{files_to_edit/TW_Engraulis-japonicus_youyaku}
+\input{files_to_edit/TW_Engraulis-japonicus_maegaki}
+\input{controllingfiles/TW_Engraulis-japonicus_seitai}
+\input{controllingfiles/TW_Engraulis-japonicus_gyogyou_joukyou}
+\input{controllingfiles/TW_Engraulis-japonicus_shigennojoutai}
+\input{controllingfiles/TW_Engraulis-japonicus_abc_santei_thisyear}
+\input{files_to_edit/TW_Engraulis-japonicus_abc_igai}
+
+\bibliographystyle{mynatbib}
+\bibliography{files_to_edit/TW_Engraulis-japonicus_references}
+\clearpage
+\input{files_to_edit/TW_Engraulis-japonicus_figures}
+%\input{_tables}
+%\setcounter{chapter}{0}
+#+END_SRC
+***** TODO Test for separated references
+CLOCK: [2018-06-19 Tue 09:06]--[2018-06-19 Tue 10:11] =>  1:05
+***** DONE Install redpen system
+- State "DONE"       from ""           [2018-06-19 Tue 09:07]
+***** DONE Install chapterbib.sty
+- State "DONE"       from "TODO"       [2018-06-19 Tue 19:57]
+**** TODO Plan2::Using pdfpages [0%]
+***** TODO make templates
+*** 2系（未定）
+** digest
+** GitHub使っていいか作業部会で確認
+
+** Make cheat sheet
