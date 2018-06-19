@@ -12,13 +12,18 @@
 \usepackage{url}
 \usepackage{fancyhdr}
 \usepackage{subfiles}
-\usepackage{TW_Engraulis-japonicus.sty}
+\usepackage{TW_Engraulis-japonicus}
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0.0pt}
+\addtolength{\headheight}{20.0pt}
+
 \renewcommand{\chaptermark}[1]{\markright{}}
 \renewcommand{\sectionmark}[1]{\markright{}}
-\chead{\thechapter--\thepage--}
-\cfoot{\normalfont\hfil-- \thepage\ --\hfil}
+\markboth{}{}
+\lhead{}
+\chead{カタクチイワシ対馬暖流系群 --\thepage--}
+\rhead{}
+\cfoot{}
 \ifnum 42146=\euc"A4A2
   \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
 \else
@@ -255,7 +260,7 @@ bookmarksopen=true,%
 %
 %
 \mainmatter
-\chapter{平成\ThisYrJp（\ThisYr）年度カタクチイワシ対馬暖流系群の資源評価}
+\chapter*{平成\ThisYrJp（\ThisYr）年度カタクチイワシ対馬暖流系群の資源評価}
 
 \input{files_to_edit/TW_Engraulis-japonicus_sekinintantou}
 \input{files_to_edit/TW_Engraulis-japonicus_youyaku}

@@ -1,7 +1,8 @@
 
-\documentclass[A4j, disablejfam, titlepage, openright, twoside, 10.5pt, dvipdfmx, report]{myjsbook}
+\documentclass[A4j, disablejfam, titlepage, openright, twoside, 10.5pt]{myjsbook}
 \linespread{1.5}
 \usepackage[dvipdfmx, hiresbb]{graphicx, xcolor}
+\usepackage{draftwatermark}
 \usepackage{otf}
 \usepackage{array, booktabs}
 \usepackage{blindtext}
@@ -9,11 +10,23 @@
 \usepackage{atbegshi}
 \usepackage{amsmath}
 \usepackage{url}
-\usepackage{pdfpages}
 \usepackage{fancyhdr}
+\usepackage{subfiles}
+\usepackage{TW_Engraulis-japonicus}
 \pagestyle{fancy}
-\cfoot{--\thepage--}
-\lhead{}
+\renewcommand{\headrulewidth}{0.0pt}
+\addtolength{\headheight}{20.0pt}
+
+\renewcommand{\chaptermark}[1]{\markright{}}
+\renewcommand{\sectionmark}[1]{\markright{}}
+\fancyhf{}
+\chead{カタクチイワシ太平洋系群 --\thepage--}
+\cfoot{}
+\ifnum 42146=\euc"A4A2
+  \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
+\else
+  \AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
+\fi
 %\usepackage{footnpag}
 %\makeatletter
 %\let\original@@makefntext\@makefntext
@@ -54,6 +67,7 @@ bookmarksopen=true,%
 \setlength{\evensidemargin}{\oddsidemargin}
 \setlength{\abovecaptionskip}{-3truemm}
 \setlength{\belowcaptionskip}{-2truemm}
+\SetWatermarkLightness{0.9}
 \setcounter{tocdepth}{1} %1だとchapterまで目次に表示される
 %\usepackage{ctable, dcolumn}
 \usepackage[format=hang, labelsep=period]{caption}
@@ -244,30 +258,15 @@ bookmarksopen=true,%
 %
 %
 \mainmatter
-%\part*{第1分冊}
-\tableofcontents
-%\include{_PF_Sardinops-melanostictus}
-%\include{_SI_Sardinops-melanostictus}
-%\include{output/TW_Sardinops-melanostictus_TAC_rule1}
-%\include{_TW_Engraulis-japonicus}
-%\part*{第2分冊}
-%\include{_PF_Engraulis-japonicus}
-%\include{_SI_Engraulis-japonicus}
-%\include{_TW_Engraulis-japonicus}
-\includepdf[pages=-, pagecommand={\thispagestyle{plain}}]{fish1}
-\includepdf[pages=-, pagecommand={\thispagestyle{plain}}]{fish2}
-%\includepdf[pages=-]{fish2}
+\chapter{平成\ThisYrJp（\ThisYr）年度カタクチイワシ太平洋系群の資源評価}
 
+\input{files_to_edit/TW_Engraulis-japonicus_sekinintantou}
+\subfile{files_to_edit/fish2_maegaki}
 
-%\part*{第2分冊}
-%\include{_TW_Engraulis-japonicus}
-%\include{sweave_test}
-%\onecolumn
-%\begin{multicols}{2}
-%\listoftables
-%\listoffigures
-%\end{multicols}
-%
-%
-%
+\bibliographystyle{mynatbib}
+\bibliography{files_to_edit/PF_Engraulis-japonicus_references}
+\clearpage
+\input{files_to_edit/TW_Engraulis-japonicus_figures}
+%\input{_tables}
+
 \end{document}
