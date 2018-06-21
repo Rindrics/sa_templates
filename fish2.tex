@@ -1,3 +1,4 @@
+
 \documentclass[A4j, disablejfam, titlepage, openright, twoside, 10.5pt]{myjsbook}
 \linespread{1.5}
 \usepackage[dvipdfmx, hiresbb]{graphicx, xcolor}
@@ -10,13 +11,17 @@
 \usepackage{amsmath}
 \usepackage{url}
 \usepackage{fancyhdr}
+\usepackage{subfiles}
 \usepackage{TW_Engraulis-japonicus}
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0.0pt}
+\addtolength{\headheight}{20.0pt}
+
 \renewcommand{\chaptermark}[1]{\markright{}}
 \renewcommand{\sectionmark}[1]{\markright{}}
-\chead{\thechapter--\thepage--}
-\cfoot{\normalfont\hfil-- \thepage\ --\hfil}
+\fancyhf{}
+\chead{カタクチイワシ太平洋系群 --\thepage--}
+\cfoot{}
 \ifnum 42146=\euc"A4A2
   \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
 \else
@@ -213,8 +218,8 @@ bookmarksopen=true,%
 \begin{center}
 \begin{tabular}{cccccc}
 \toprule
-\multirow{2}{*}{年}	& {資源量}  & {親魚量}  & {漁獲量}	&	{$F$} & {漁獲割合}\tabularnewline
-          &   (千トン)	& (千トン)		&	(千トン)&		&	（\%）	\tabularnewline
+\multirow{2}{*}{年} & {資源量}  & {親魚量}  & {漁獲量}  & {$F$} & {漁獲割合}\tabularnewline
+          &   (千トン)  & (千トン)    & (千トン)&   & （\%）  \tabularnewline
 \hline
 #1  \tabularnewline
 #2  \tabularnewline
@@ -253,29 +258,15 @@ bookmarksopen=true,%
 %
 %
 \mainmatter
-%\part*{第1分冊}
-\tableofcontents
-%\include{_PF_Sardinops-melanostictus}
-%\include{_SI_Sardinops-melanostictus}
-%\include{output/TW_Sardinops-melanostictus_TAC_rule1}
-%\include{_TW_Engraulis-japonicus}
-%\part*{第2分冊}
-%\include{_PF_Engraulis-japonicus}
-%\include{_SI_Engraulis-japonicus}
-%\include{_TW_Engraulis-japonicus}
-\include{PF_Engraulis-japonicus_nonTAC_1_withB}
-\include{TW_Engraulis-japonicus_nonTAC_1_withB}
+\chapter{平成\ThisYrJp（\ThisYr）年度カタクチイワシ太平洋系群の資源評価}
 
+\input{files_to_edit/TW_Engraulis-japonicus_sekinintantou}
+\subfile{files_to_edit/fish2_maegaki}
 
-%\part*{第2分冊}
-%\include{_TW_Engraulis-japonicus}
-%\include{sweave_test}
-%\onecolumn
-%\begin{multicols}{2}
-%\listoftables
-%\listoffigures
-%\end{multicols}
-%
-%
-%
+\bibliographystyle{mynatbib}
+\bibliography{files_to_edit/PF_Engraulis-japonicus_references}
+\clearpage
+\input{files_to_edit/TW_Engraulis-japonicus_figures}
+%\input{_tables}
+
 \end{document}
