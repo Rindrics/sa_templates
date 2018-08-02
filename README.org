@@ -1,7 +1,7 @@
 #+STARTUP: indent content
-* stockAssessTeX                                                    :stacTeX:
+#+TITLE: stockAssessTeX
 資源評価TeX版リポジトリ。
-
+HPサンプル　https://smxshxishxad.github.io/stockAssessTeX/
 ** TODO 環境設定 [50%]
 *** TODO Docker環境の整備
 *** DONE Redpen
