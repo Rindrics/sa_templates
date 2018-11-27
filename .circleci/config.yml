@@ -5,11 +5,6 @@ jobs:
             - image: eisoku9618/kuroiwa_dockefiles_for_latexmk
         steps:
             - run:
-                name: Installing dependancies
-                command: |
-                    apk add --update git
-                    apk add --update openssh
-            - run:
                 name: Git settings
                 command: |
                     git config --global user.email 'smxshxishxad@me.com'
