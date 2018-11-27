@@ -1,0 +1,11 @@
+services:
+  - docker:dind
+
+latex_job:
+  image: eisoku9618/kuroiwa_dockefiles_for_latexmk
+  script:
+    - (for dir in *; do [ -d "${dir}" ] && echo "$dir start" && (cd $dir && latexmk main.tex && mv .tmp/main.pdf ../${dir}.pdf); done)
+  artifacts:
+    expire_in: 2 days
+    paths:
+      - ./*.pdf
