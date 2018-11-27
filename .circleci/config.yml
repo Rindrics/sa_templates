@@ -1,29 +1,29 @@
 version: 2
 jobs:
     build:
-	docker:
-	    - image: eisoku9618/kuroiwa_dockefiles_for_latexmk
-	steps:
-	    - run:
-		name: Installing dependancies
-		command: |
-		    apk add --update git
-		    apk add --update openssh
-	    - run:
-		name: Git settings
-		command: |
-		    git config --global user.email 'smxshxishxad@me.com'
-		    git config --global user.name 'Akira Hayashi'
-	    - checkout
-	    - run:
-		name: Generating current version
-		command: |
-		    latexmk fish1.tex
-		    mv .tmp/fish1.pdf ./fish1.pdf
-	    - run:
-		name: Commit to repository
-		command: |
-		    git checkout master
-		    git add ./fish1.pdf
-		    git commit -m "[CircleCI] Generate PDF @$(date +'%Y/%m/%d %I:%M') [ci skip]"
-		    git push origin master
+        docker:
+            - image: eisoku9618/kuroiwa_dockefiles_for_latexmk
+        steps:
+            - run:
+                name: Installing dependancies
+                command: |
+                    apk add --update git
+                    apk add --update openssh
+            - run:
+                name: Git settings
+                command: |
+                    git config --global user.email 'smxshxishxad@me.com'
+                    git config --global user.name 'Akira Hayashi'
+            - checkout
+            - run:
+                name: Generating current version
+                command: |
+                    latexmk fish1.tex
+                    mv .tmp/fish1.pdf ./fish1.pdf
+            - run:
+                name: Commit to repository
+                command: |
+                    git checkout master
+                    git add ./fish1.pdf
+                    git commit -m "[CircleCI] Generate PDF @$(date +'%Y/%m/%d %I:%M') [ci skip]"
+                    git push origin master
