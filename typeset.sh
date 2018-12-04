@@ -8,5 +8,5 @@ pbibtex ./fish2
 platex ./fish2
 platex ./fish2
 dvipdfmx ./fish2
-platex ./master_plan2
-dvipdfmx ./master_plan2
+platex ./master
+dvipdfmx ./master
