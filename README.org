@@ -1,7 +1,16 @@
 #+STARTUP: indent content
 #+TITLE: stockAssessTeX
-資源評価TeX版リポジトリ。
-HPサンプル　https://smxshxishxad.github.io/stockAssessTeX/
+
+* これは何か？
+資源評価詳細版の作成作業の合理化のためのリポジトリ．
+合理化のための方法は，LaTeX導入．
+
+* このリポジトリで何ができるか
+LaTeX形式で資源評価報告書のサンプルを作れるようになる（2018-12-06現在）．
+* どうやって？
+現状の詳細版は，「マイワシ太平洋系群」，「マイワシ対馬暖流系群」，（以下略）が合わさって「我が国周辺水域の漁業資源評価」となっている．
+サンプルでは，これを単純化し，"fish1"，"fish2"を統合した"master"を作成する．
+** 魚種
 ** TODO 環境設定 [50%]
 *** TODO Docker環境の整備
 *** DONE Redpen
