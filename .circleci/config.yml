@@ -4,6 +4,8 @@ jobs:
         docker:
             - image: eisoku9618/kuroiwa_dockefiles_for_latexmk
         steps:
+                    apk add --update git
+                    apk add --update openssh
             - run:
                 name: Git settings
                 command: |
