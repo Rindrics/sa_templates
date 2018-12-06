@@ -1,3 +1,4 @@
+#!/bin/bash
 uplatex ./fish1
 pbibtex ./fish1
 uplatex ./fish1

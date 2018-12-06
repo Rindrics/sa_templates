@@ -1,3 +1,4 @@
+#!/bin/bash
 rm *.aux
 rm *.blg
 rm *.dvi
