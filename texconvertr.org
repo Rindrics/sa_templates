@@ -1,0 +1,40 @@
+#+TITLE: texconvertr 開発ノート
+#+PROPERTY: header-args :cache yes :exports code :results scalar
+#+STARTUP: contents
+#+BEGIN_SRC R :results silent
+  setwd("texconvertr")
+#+END_SRC
+
+
+* 環境構築
+#+BEGIN_SRC R :results silent
+# devtools::create("texconvertr")
+setwd("texconvertr")
+usethis::use_testthat()
+#+END_SRC
+
+** 使用したパッケージ
+#+BEGIN_SRC R
+  setwd("texconvertr")
+  usethis::use_package("magrittr", "Imports")
+#+END_SRC
+
+
+* 開発
+
+** リロード
+#+BEGIN_SRC R :results output
+  setwd("texconvertr")
+  system("R CMD INSTALL --preclean --no-multiarch --with-keep.source .")
+  devtools::load_all()
+  devtools::test()
+  devtools::document(roclets=c('rd', 'collate', 'namespace'))
+#+END_SRC
+
+#+RESULTS:
+: No man pages found in package  ‘texconvertr’ 
+: Writing NAMESPACE
+
+** テスト
+
+** 開発
