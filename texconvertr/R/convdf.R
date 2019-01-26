@@ -1,6 +1,6 @@
-make_header <- function(df) {
-  name <- paste(colnames(df), collapse = " & ")
-  eor  <- "\\ \\hline"
-  out  <- paste(name, eor)
+make_row <- function(x) {
+  elements <- paste(x, collapse = " & ")
+  eor     <- "\\"
+  out     <- paste(elements, eor)
   out
 }
