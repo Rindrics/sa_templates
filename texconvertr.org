@@ -22,7 +22,7 @@ usethis::use_testthat()
 
 * 開発
 
-** リロード
+** リロード & 自動テスト
 #+BEGIN_SRC R :results output
   setwd("texconvertr")
   system("R CMD INSTALL --preclean --no-multiarch --with-keep.source .")
@@ -33,8 +33,30 @@ usethis::use_testthat()
 
 #+RESULTS:
 : No man pages found in package  ‘texconvertr’ 
-: Writing NAMESPACE
+: ✔ | OK F W S | Context
+: ⠏ |  0       | convert data frame into LaTeX table⠋ |  1       | convert data frame into LaTeX table✔ |  1       | convert data frame into LaTeX table
+: 
+: ══ Results ═════════════════════════════════════════════════════════════════════
+: OK:       1
+: Failed:   0
+: Warnings: 0
+: Skipped:  0
 
 ** テスト
+#+BEGIN_SRC R :tangle texconvertr/tests/testthat/test_convdf.R
+  context("convert data frame into LaTeX table")
 
+  test_that("make_header() makes header", {
+    df <- data.frame(a = 1:3, b = 2:4)
+    expect_equal(make_header(df), "a & b \\ \\hline")
+  })
+#+END_SRC
 ** 開発
+#+BEGIN_SRC R :tangle texconvertr/R/convdf.R
+  make_header <- function(df) {
+    name <- paste(colnames(df), collapse = " & ")
+    eor  <- "\\ \\hline"
+    out  <- paste(name, eor)
+    out
+  }
+#+END_SRC
