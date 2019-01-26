@@ -5,6 +5,8 @@
   setwd("texconvertr")
 #+END_SRC
 
+シンプルな表なら Hmisc パッケージでできる．
+特殊な要求があったときまで，プロジェクトを停止する．
 
 * 環境構築
 #+BEGIN_SRC R :results silent
