@@ -9,7 +9,7 @@
 LaTeX形式で資源評価報告書のサンプルを作れるようになる（2018-12-06現在）．
 * どうやって？
 ** 概要
-現状の詳細版は，「マイワシ太平洋系群」，「マイワシ対馬暖流系群」，（以下略）が合わさって「我が国周辺水域の漁業資源評価」となっている．
+現状の詳細版は，「マイワシ太平洋系群」，「マイワシ対馬暖流系群」，（以下略）がて「我が国周辺水域の漁業資源評価」となっている．
 サンプルでは，これを単純化し，"fish1"，"fish2"を統合した"master"を作成する．
 
 - fish1の資源評価担当者は，"fish1.tex"をコンパイルして，"fish1.pdf"を作る．
@@ -28,7 +28,7 @@ LaTeX形式で資源評価報告書のサンプルを作れるようになる（
 **** コンパイル
 ***** Windows
 ***** Mac OS
-上記[[*%E6%A6%82%E8%A6%81][「概要]]」の内容が[[https://github.com/smxshxishxad/stockAssessTeX/blob/master/typeset.sh][typeset.sh]]としてまとまっているのでこれを実行する．
+上記[[*%E6%A6%82%E8%A6%81][「概要]]」の内容が[[https://github.com/kikirinrin/stockAssessTeX/blob/master/typeset.sh][typeset.sh]]としてまとまっているのでこれを実行する．
 
 ターミナルを開いてこのディレクトリに移動し，
 #+BEGIN_SRC sh
@@ -47,9 +47,9 @@ sh remove_files.sh
 *** サンプルを編集・更新する
 **** システムの構造
 本システムでは，作業の見通しを良くするために，単一系群の原稿を節や見出しレベルのファイルへ分割している．
-担当者の執筆作業は，全て[[https://github.com/smxshxishxad/stockAssessTeX/tree/master/files_to_edit][files_to_edit]]に入っているファイルに対して行う[fn:files]．
+担当者の執筆作業は，全て[[https://github.com/kikirinrin/stockAssessTeX/tree/master/files_to_edit][files_to_edit]]に入っているファイルに対して行う[fn:files]．
 編集が終わったら，"fishX.tex"をコンパイルしてpdfを生成する．
 
-[fn:files]現状のシステムはファイル粒度が細かすぎるので，[[https://github.com/smxshxishxad/stockAssessTeX/pull/10/commits/bc80d544c897a9b35c779552bf8a5e09bdf1888c][渡邊さんが検討して下さった方法]]に変更予定
+[fn:files]現状のシステムはファイル粒度が細かすぎるので，[[https://github.com/kikirinrin/stockAssessTeX/pull/10/commits/bc80d544c897a9b35c779552bf8a5e09bdf1888c][渡邊さんが検討して下さった方法]]に変更予定
 *** 今後の予定
-[[https://github.com/smxshxishxad/stockAssessTeX/projects][Projects]]参照．
+[[https://github.com/kikirinrin/stockAssessTeX/projects][Projects]]参照．
