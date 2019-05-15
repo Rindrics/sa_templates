@@ -103,35 +103,20 @@ bookmarksopen=true,%
 \\
 }
 \date{\today}
-%\maketitle
-%
-%
+\maketitle
 %
 \mainmatter
-%\part*{第1分冊}
+\part*{第1分冊}
+
 \tableofcontents
-%\include{_PF_Sardinops-melanostictus}
-%\include{_SI_Sardinops-melanostictus}
-%\include{output/TW_Sardinops-melanostictus_TAC_rule1}
-%\include{_TW_Engraulis-japonicus}
-%\part*{第2分冊}
-%\include{_PF_Engraulis-japonicus}
-%\include{_SI_Engraulis-japonicus}
-%\include{_TW_Engraulis-japonicus}
+
 \includepdf[pages=-, pagecommand={\thispagestyle{plain}}]{fish1}
 \includepdf[pages=-, pagecommand={\thispagestyle{plain}}]{fish2}
-%\includepdf[pages=-]{fish2}
+
+\part*{第2分冊}
+
+\includepdf[pages=-, pagecommand={\thispagestyle{plain}}]{fish1}
+\includepdf[pages=-, pagecommand={\thispagestyle{plain}}]{fish2}
 
 
-%\part*{第2分冊}
-%\include{_TW_Engraulis-japonicus}
-%\include{sweave_test}
-%\onecolumn
-%\begin{multicols}{2}
-%\listoftables
-%\listoffigures
-%\end{multicols}
-%
-%
-%
 \end{document}
