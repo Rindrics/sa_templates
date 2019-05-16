@@ -1,0 +1,134 @@
+%ここから 引用文献レベルをsubsectionに再定義
+\makeatletter
+\renewenvironment{thebibliography}[1]{%
+  %\global\let\presectionname\relax
+  %\global\let\postsectionname\relax
+  \subsection{\bibname}\@mkboth{\bibname}{}%
+  %\addcontentsline{toc}{subsection}{\bibname}%   これをオンにすると目次に2回出てきてしまう
+  \list{\@biblabel{\@arabic\c@enumiv}}%
+        {\settowidth\labelwidth{\@biblabel{#1}}%
+        \setlength{\itemindent}{-2zw}%      文献リストのインデント
+        \setlength{\topsep}{-10zw}%         引用文献」から最初の文献までの空白
+        %\leftmargin\labelwidth
+        %\advance\leftmargin\labelsep
+        %\@openbib@code
+        %\usecounter{enumiv}%
+        %\let\p@enumiv\@empty
+        %\renewcommand\theenumiv{\@arabic\c@enumiv}
+        }%
+  %\sloppy
+  %\clubpenalty4000
+  %\@clubpenalty\clubpenalty
+  %\widowpenalty4000%
+  \sfcode`\.\@m}
+  {\def\@noitemerr
+    {\@latex@warning{Empty `thebibliography' environment}}%
+  \endlist}
+\makeatother
+%ここまで 引用文献レベルをsubsectionに再定義
+
+
+%ハイフネーション設定
+\hyphenation{Engraulis}
+\hyphenation{japonicus}
+
+\renewcommand{\sfdefault}{phv}
+\renewcommand{\rmdefault}{qtm}
+\renewcommand{\baselinestretch}{1}
+\renewcommand{\thefootnote}{*\roman{footnote}}
+\renewcommand{~}{\phantom{0}}
+\makeatletter
+   \renewcommand{\thefigure}{\arabic{figure}}%      図番号の体裁
+  \@addtoreset{figure}{section}
+ \makeatother
+
+ \makeatletter
+ \renewcommand{\thetable}{arabic{table}}%       表番号の体裁
+  \@addtoreset{table}{section}
+\makeatother
+%コマンド
+\setcounter{secnumdepth}{3}
+\newcommand{\fcur}{$F_{current}$}
+\newcommand{\fmed}{Fmed}
+\newcommand{\要約}{\begin{center}\Large{{\gt 要　　　約}}\end{center}}
+\newcommand{\digest}{}
+%\newcommand{\}{}
+
+%環境
+\newenvironment{OneOfSixFigs}[3]{
+\begin{figure}[htp]
+    \captionsetup{width=65mm}
+ \begin{minipage}{0.5\hsize}
+  \begin{center}
+   \includegraphics[width=70mm]{#1}
+  \end{center}
+  \caption{#2}
+  \label{#3}
+ \end{minipage}
+\end{figure}}
+
+\newenvironment{TwoOfSixFigs}[6]{
+\begin{figure}[htp]
+    \captionsetup{width=65mm}
+ \begin{minipage}{0.5\hsize}
+  \begin{center}
+   \includegraphics[width=70mm]{#1}
+  \end{center}
+  \caption{#2}
+  \label{#3}
+ \end{minipage}
+ \begin{minipage}{0.5\hsize}
+  \begin{center}
+   \includegraphics[width=70mm]{#4}
+  \end{center}
+  \caption{#5}
+  \label{#6}
+ \end{minipage}
+\end{figure}}
+
+\newenvironment{TwoOfEightFigs}[6]{
+\begin{figure}[htp]
+    \captionsetup{width=60mm}
+ \begin{minipage}{0.5\hsize}
+  \begin{center}
+   \includegraphics[width=60mm]{#1}
+  \end{center}
+  \caption{#2}
+  \label{#3}
+ \end{minipage}
+ \begin{minipage}{0.5\hsize}
+  \begin{center}
+   \includegraphics[width=60mm]{#4}
+  \end{center}
+  \caption{#5}
+  \label{#6}
+ \end{minipage}
+\end{figure}}
+
+%担当機関
+\newenvironment{担当機関等}[3]{
+\begin{table}[h]
+\begin{tabular}{{rp{12.2cm}}}
+責任担当水研: &#1 （#2）\\
+参画機関: & #3
+\end{tabular}
+\end{table}
+}
+
+%過去5年間の資源量等
+\newenvironment{過去五年間の資源量等}[5]{
+\begin{center}
+\begin{tabular}{cccccc}
+\toprule
+\multirow{2}{*}{年} & {資源量}  & {親魚量}  & {漁獲量}  & {$F$} & {漁獲割合}\tabularnewline
+          &   (千トン)  & (千トン)    & (千トン)&   & （\%）  \tabularnewline
+\hline
+#1  \tabularnewline
+#2  \tabularnewline
+#3  \tabularnewline
+#4  \tabularnewline
+#5  \tabularnewline
+\bottomrule
+\end{tabular}
+\end{center}
+}

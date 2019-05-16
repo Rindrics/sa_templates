@@ -1,0 +1,97 @@
+\documentclass[A4j, disablejfam, titlepage, openright, twoside, 10.5pt, dvipdfmx, report, uplatex]{myjsbook}
+\linespread{1.5}
+\usepackage[dvipdfmx, hiresbb]{graphicx, xcolor}
+\usepackage{otf}
+\usepackage{array, booktabs}
+\usepackage{blindtext}
+\usepackage{colortbl}
+\usepackage{atbegshi}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{pdfpages}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\cfoot{--\thepage--}
+\lhead{}
+
+\makeatletter
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother
+
+\usepackage[dvipdfmx,
+bookmarks=true,%
+bookmarksnumbered=true,%
+bookmarksopen=true,%
+]{hyperref}
+
+\setlength{\textwidth}{15truecm}
+\setlength{\hoffset}{0pt}
+\setlength{\voffset}{-1.54truecm}
+\setlength{\headsep}{2truecm}
+\setlength{\footskip}{2truecm}
+\setlength{\textheight}{23truecm}
+
+\setlength{\marginparsep}{1truecm}
+\setlength{\marginparwidth}{0pt}
+\setlength{\oddsidemargin}{0.46truecm}
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\abovecaptionskip}{-3truemm}
+\setlength{\belowcaptionskip}{-2truemm}
+\setcounter{tocdepth}{1}
+\usepackage[format=hang, labelsep=period]{caption}
+\usepackage[sectionbib]{chapterbib}
+\usepackage{float}
+\usepackage[T1]{fontenc}
+\usepackage{layout}
+\usepackage{pdflscape}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{otf}
+\usepackage{pifont}
+\usepackage{subfig}
+\usepackage{stockassess_full}
+\usepackage{tabularx}
+\usepackage{textcomp}
+\usepackage{threeparttable}
+\usepackage{subfiles}
+\usepackage{tocbibind}
+\usepackage[authoryear, round, sort&compress]{mynatbib}
+\bibliographystyle{jecon}
+
+\begin{document}
+\frontmatter
+
+\title{
+{\thisyrjp}年度
+\\
+{\HUGE 我が国周辺水域の漁業資源評価}}
+\author{\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+{\Large 水産庁増殖推進部}
+\\
+}
+\date{\today}
+\maketitle
+%
+\mainmatter
+\part*{第1分冊}
+
+\tableofcontents
+
+\includepdf[pages=-, pagecommand={\thispagestyle{plain}}]{fish1}
+\includepdf[pages=-, pagecommand={\thispagestyle{plain}}]{fish2}
+
+\part*{第2分冊}
+
+\includepdf[pages=-, pagecommand={\thispagestyle{plain}}]{fish1}
+\includepdf[pages=-, pagecommand={\thispagestyle{plain}}]{fish2}
+
+
+\end{document}
