@@ -13,16 +13,6 @@
 \pagestyle{fancy}
 \cfoot{--\thepage--}
 \lhead{}
-%\usepackage{footnpag}
-%\makeatletter
-%\let\original@@makefntext\@makefntext
-%\let\original@footnoterule\footnoterule
-%\makeatother
-%\usepackage{ftnright}
-%\makeatletter
-%\let\@makefntext\original@@makefntext
-%\let\footnoterule\original@footnoterule
-%\makeatother
 
 \makeatletter
 \newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
@@ -33,60 +23,44 @@ bookmarks=true,%
 bookmarksnumbered=true,%
 bookmarksopen=true,%
 ]{hyperref}
-%\setlength{\textwidth}{\fullwidth}
+
 \setlength{\textwidth}{15truecm}
 \setlength{\hoffset}{0pt}
 \setlength{\voffset}{-1.54truecm}
 \setlength{\headsep}{2truecm}
 \setlength{\footskip}{2truecm}
 \setlength{\textheight}{23truecm}
-%\setlength{\textwidth}{35zw}
-%\setlength{\textheight}{50zw}
-%\setlength{\headwidth}{1truemm}
-%\addtolength{\textheight}{\topskip}
-%\setlength{\topmargin}{0pt}
-%\setlength{\voffset}{-15truemm}
-%\setlength{\hoffset}{-5truemm}
+
 \setlength{\marginparsep}{1truecm}
 \setlength{\marginparwidth}{0pt}
 \setlength{\oddsidemargin}{0.46truecm}
 \setlength{\evensidemargin}{\oddsidemargin}
 \setlength{\abovecaptionskip}{-3truemm}
 \setlength{\belowcaptionskip}{-2truemm}
-\setcounter{tocdepth}{1} %1だとchapterまで目次に表示される
-%\usepackage{ctable, dcolumn}
+\setcounter{tocdepth}{1}
 \usepackage[format=hang, labelsep=period]{caption}
 \usepackage[sectionbib]{chapterbib}
 \usepackage{float}
 \usepackage[T1]{fontenc}
-%\usepackage[scaled]{helvet}
 \usepackage{layout}
 \usepackage{pdflscape}
-%\usepackage{myCitation}
 \usepackage{multirow}
 \usepackage{multicol}
-%\usepackage{newtxtext, newtxmath}
 \usepackage{otf}
 \usepackage{pifont}
-%\usepackage{subcaption}
 \usepackage{subfig}
 \usepackage{stockassess_full}
 \usepackage{tabularx}
 \usepackage{textcomp}
 \usepackage{threeparttable}
-\usepackage{subfiles} % 独立タイプセットを可能にするが、chapterbibと併用できないので使用を停止。併用のためには正規表現などで工夫する必要がある。
+\usepackage{subfiles}
 \usepackage{tocbibind}
-\usepackage[authoryear, round, sort&compress]{mynatbib} %natbibを使うと引用文献が続きになってしまう。
-%\bibliographystyle{mynatbib}
-%\usepackage{jecon}
-\bibliographystyle{jecon}     %jeconの利用を検討中。\citealtなどの引用文を変更する必要あり
-%\setcitestyle{number,close={)}}
+\usepackage[authoryear, round, sort&compress]{mynatbib}
+\bibliographystyle{jecon}
 
 \begin{document}
 \frontmatter
-%\layout
-%
-%
+
 \title{
 {\thisyrjp}年度
 \\
